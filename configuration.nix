@@ -103,6 +103,10 @@
     gnupg # gpg
     pinentry-curses # necessary for gpg
   ];
+  
+  environment.variables = rec {
+    GPG_TTY = "/dev/pts/0"; # Necessary for gpg signing to function properly
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
